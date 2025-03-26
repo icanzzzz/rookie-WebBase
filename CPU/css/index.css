@@ -1,0 +1,424 @@
+/* 纵向主轴 */
+.newDiv,.partFace,.home,.beijingban1,.zongdaolan{
+	display: flex;
+	flex-direction: column;/* 设置主轴方向 */
+	align-items: center;/* 设置主轴位置 */
+	justify-content: center;/* 设置内容在主轴上排布方式 */
+}
+/* 横向主轴 */
+.loopBox,.partFace>div,.partFaceTotalLoopBox,.rank,.homeTotalBox,.lunbobuttonbox,.beijingban2,.lunbo,.yemian2cell,.lunboExtro{
+	display: flex;
+	align-items: center;/* 设置主轴方向 */
+	justify-content: center;/* 设置内容在主轴上排布方式 */
+}
+
+
+*{
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+}
+html{
+	min-height: 800px;
+	min-width: 900px;
+	overflow: hidden;/* 用于拒绝接受css层面的鼠标滚动事件 */
+}
+.beijing{
+	background-image: url(../img/mount1.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+
+main{
+	width: 100%;
+	min-width: 1200px;
+}
+.yemian{
+	width: 100%;
+	height: 100vh;
+	min-height: 700px;
+	overflow: hidden;
+}
+.beijingban1{
+	position: absolute;
+	top: 10%;
+	left: 0%;
+	height: 80%;
+	width: 100%;
+	background-color: rgb(20, 20, 20);
+}
+.beijingban2{
+	position: absolute;
+	top: 10%;
+	left: 0%;
+	height: 80%;
+	width: 100%;
+	background-color: rgb(20, 20, 20);
+}
+
+.home{
+	width: 100%;
+	height: 100%;
+	justify-content: space-between;
+}
+.daohang{
+	height: 100px;
+	width: 100%;
+	background-color: black;
+	min-width: 1200px;
+}
+.daohang div{
+	height: 100%;
+	width: 150px;
+	display: inline-block;
+}
+.daohang div img{
+	width: 100%;
+	height: 100%;
+}
+.daohang>div:last-child{
+	width: auto;
+	position: absolute;/* 使用绝对定位时父元素没有定位过,则会使html成为父元素,100%高度就会占满整个屏幕,而不是导航栏 */
+	right: 0px;
+	background:linear-gradient(to right,black -2%,#0068B5 16%,#76B900 50%,#DD0031 84%,black 103%);
+}
+.neirong{
+	line-height: 100px;/* 行高100垂直居中 */
+	text-align: center;/* 文本水平居中 */
+	font-size: 24px;
+	color: white;
+	transition: 1s;
+}
+.daohang span{
+	margin: auto;
+	margin-top: -35px;
+	display: block;
+	width: 0px;
+	transition:1s;	
+	border-bottom: 2px solid white;
+}
+.neirong:hover>span{
+	width: 72px;	
+}
+
+.homeText{
+	color: white;
+	font-size: 80px;
+	font-weight: bolder;
+	text-shadow: 2px 2px 3px#b9b9b9;
+	text-align: center;
+}
+
+.homeTotalBox{
+	height: 160px;
+	width: 100%;
+	justify-content: space-evenly;
+	transition: 1s;
+	background: #333231;
+}
+.homeTotalBox:hover{
+	height: 200px;
+}
+.homeBox{
+	height: 50%;
+	width: 25%;
+	justify-content: start;
+	text-align: center;
+}
+.homeBoxIcon{
+	margin: auto;
+	height: 80px;
+	width: 80px;
+	border-radius: 30%;
+	background: #ffbf00;
+	background-repeat: no-repeat;
+	background-size: 70%;
+	background-position: 50% 50%;
+}
+.homeBox span{
+	opacity: 0;
+	color: white;
+	font-size: 20px;
+	transition: 1s;
+	line-height: 50px;
+	letter-spacing: 20px;
+	left: 10px;
+}
+.homeTotalBox:hover span{
+	opacity: 1;
+}
+.fengelan{
+	height: 60%;
+	width: 1px;
+	background-color: gray;
+}
+
+
+
+
+
+.lunbo,.lunboExtro{
+	/* 这里宽度最好设置一个绝对值，因为js层的转换算法中数据类型是整型。如果不是绝对值，会导致对浮点运算时算法中出现误差，导致转换页面时定位不准确甚至导致不能换页。 */
+	/* 也是为了性能作出的牺牲 */
+	width: 1200px;
+}
+.lunbo{
+	height: 560px;
+}
+.lunbobuttonbox{
+	width: 10%;
+	height: 100%;
+}
+.lunbobutton{
+	font-size: 60px;
+	color: gray;
+	height: 90px;
+	width: 40px;
+	line-height: 95px;
+	border: none;
+	background-color: rgb(51, 51, 51);
+	border-radius: 4px;
+	cursor: pointer;
+}
+.lunbobutton:hover{
+	height: 95px;
+	width: 45px;
+	box-shadow:0px 0px 3px 1px rgb(80, 80, 80);
+}
+.lunbobutton:active{
+	height: 90px;
+	width: 40px;
+}
+.lunbototalbox{
+	margin: auto;
+	width: 80%;
+	height: 100%;
+	white-space: nowrap;/* 强制元素内的行元素不换行 */
+	overflow: hidden;
+	background: radial-gradient(#252525,black);
+}
+.lunbobox{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+.lunbobox>div{
+	position: absolute;
+	background-position: center;
+	background-size: auto 90%;
+	top:0%;
+	width: 50%;
+	height: 100%;
+}
+.lunbobox>div:first-child{
+	left:0%;
+}
+.lunbobox>div:last-child{
+	right: 0%;
+}
+.lunboExtro{
+	height: 120px;
+	text-align: center;
+}
+.lunboExtroBox{
+	margin: 20px;
+	width: 250px;
+	height: 80px;
+	overflow: hidden;
+	border-bottom: 1px solid rgb(90, 90, 90);
+	color: rgb(100, 100, 100);
+	transition: 1s;
+	line-height: 80px;
+	/* 设置悬浮时鼠标样式 */
+	cursor: pointer;
+	/* 取消浏览器响应,否则在js层面响应了浏览器响应时，会认为是离开了元素导致解锁 */
+	user-select: none;
+}
+.lunboExtroBox:hover{
+	color: rgb(230, 230, 230);
+}
+.lunboExtroSolid{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	height: 4px;
+	border-radius: 1px;
+	background-color: rgb(230, 230, 230);
+}
+
+
+.yemian2bianlan{
+	height: 15%;
+	width: 100%;
+	background-color: rgb(20, 20, 20);
+}
+.yemian2cell{
+	height: 70%;
+	width: 100%;
+}
+.yemian2content{
+	color: white;
+	margin: auto;
+	text-align: center;
+}
+.yemian2text1{
+	font-size: 50px;
+}
+.yemian2text2{
+	line-height: 80px;
+}
+.buttonmodel{
+	margin: auto;
+	width: 130px;
+	height: 50px;
+}
+.buttonmodel>div{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border: 1px solid white;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	border-radius: 1px;
+	background: linear-gradient(60deg,#616161,#a8a8a8);
+	opacity: 0.3;
+}
+.buttonmodel:hover>div{
+	background: linear-gradient(60deg,#444444,#a8a8a8);
+}
+.buttonmodel button{
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-size: 18px;
+	line-height: 50px;
+	border: none;
+	background: none;
+	text-decoration: none;
+}
+
+
+.newDiv{
+	position: absolute;
+	/* 把他藏起来 */
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background-color: #ffbf00;
+	transform: translate(-50%,-50%);
+	overflow: hidden;
+
+	color: white;
+	font-size: 40px;
+	text-align: center;
+}
+.newDiv>img{
+	width: 300px;
+}
+@keyframes in {
+	0%{
+		width: 0;
+		height: 0;
+	}
+	100%{
+		width: 4000px;
+		height: 4000px;
+	}
+}
+@keyframes out {
+	0%{
+		width: 4000px;
+		height: 4000px;
+	}
+	100%{
+		width: 0;
+		height: 0;
+	}
+} 
+
+
+.rank{
+	height: 700px;
+	width: 850px;
+	justify-content: space-between;
+}
+.zongdaolan{
+	padding: 10px;
+	border-radius: 4px;
+	background-color: black;
+}
+.daolan{
+	height: 50px;
+	width: 150px;
+	font-family: "黑体";
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 40px;
+	text-align: center;
+	margin: 10px;
+	color: white;
+	border: 2px solid white;
+}
+.switchFace{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+}
+.switchFace>img{
+	width: 100%;
+}
+
+#teshuban{
+	background: none;
+}
+.toumingban{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg,#81ADAD,#361c09);
+	border-bottom: 1px solid white;
+	border-top: 1px solid white;
+	opacity: 0.7;
+}
+.partFace{
+	height: 100%;
+	width: 100%;
+	justify-content: space-evenly;
+}
+.partFace>span{
+	color: white;
+	font-size: 24px;
+}
+.partFace>div{
+	width: 100%;
+	height: 80px;
+}
+.partFaceTotalLoopBox{
+	height: 100%;
+	width: 100%;
+    transform-style: preserve-3d;
+    perspective:none;
+}
+.loopBox{
+    position: absolute;
+	width: 200px;
+	height: 90%;
+	text-align: center;
+	/* 使在背面不可见，保证3d循环时不会透视被看到 */
+	backface-visibility: hidden;
+	background-color: white;
+	border: 2px solid gray;
+	opacity: 0.7;
+}
